@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Spa</title>
+	<!-- Add CSS styles -->
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+		}
+		header {
+			background-color: #f5f5f5;
+			padding: 20px;
+		}
+		nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		nav ul {
+			display: flex;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		nav ul li {
+			margin-right: 20px;
+		}
+		nav ul li a {
+			text-decoration: none;
+			color: #333;
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px;
+			border-radius: 5px;
+			transition: background-color 0.3s ease-in-out;
+		}
+		nav ul li a:hover {
+			background-color: #333;
+			color: #fff;
+		}
+		.main {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		h1 {
+			font-size: 48px;
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 24px;
+			margin-bottom: 40px;
+		}
+		.btn {
+			padding: 10px 20px;
+			background-color: #333;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			transition: background-color 0.3s ease-in-out;
+		}
+		.btn:hover {
+			background-color: #f5f5f5;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="#" class="logo">My Spa</a>
+			<ul>
+				<li><a href="#">Reservaciones</a></li>
+				<li>
+					<a href="#">Servicios faciales</a>
+					<ul>
+						<li><a href="#">Limpieza facial básica</a></li>
+						<li><a href="#">Limpieza facial profunda</a></li>
+						<li><a href="#">Radiofrecuencia facial</a></li>
+						<li><a href="#">Hidrodermoabración</a></li>
+						<li><a href="#">Facial despigmentante</a></li>
+						<li><a href="#">Facial antiacné</a></li>
+						<li><a href="#">Facial de hidratación</a></li>
+						<li><a href="#">Facial antiedad</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Servicios corporales</a>
+					<ul>
+						<li><a href="#">Masaje relajante</a></li>
+						<li><a href="#">Masaje descontracturante</a></li>
+						<li><a href="#">Masaje de piernas cansadas</a></li>
+						<li><a href="#">Masaje de drenaje linfático</a></li>
+						<li><a href="#">Masaje prenatal terapéutico</a></li>
+						<li><a href="#">Masaje prenatal circulatorio</a></li>
+						<li><a href="#">Exfoliación corporal</a></li>
+						<li><a href="#">Masaje antiestrés</a></li>
+						<li><a href="#">Envoltura corporal</a></li>
+						<li><a href="#">Reflexología podal</a></li>
+						<li><a href="#">Tratamiento velo de novia</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Servicios de maquillaje</a>
+					<ul>
+						<li><a href="#">Maquillaje social</a></li>
+						<li><a href="#">Maquillaje de novia</a></li>
+						<li><a href="#">Maquillaje quinceañera</a></li>
+						<li><a href="#">Maquillaje fantasía</a></li>
+						<li><a href="#">Bodypaint</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Depilaciones</a>
+					<ul>
+						<li><a href="#">Axila</a></li>
+						<li><a href="#">Piernas</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Contacto</a>
+					<ul>
+						<li><a href="#">Teléfonos: 981 130 72 06, 981 170 67 65</a></li>
+						<li><a href="#">Dirección: Av. República No. 121 (altos) Col. Santa Ana</a></li>
+						<li><a href="#">Ubicación</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<main class="main">
+		<h1>Bienvenido a My Spa</h1>
+		<p>Relájate y disfruta de nuestros servicios de spa exclusivos</p>
+		<a href="#" class="btn">Reservar ahora</a>
+	</main>
+
+	<!-- Add JavaScript code -->
+	<script>
+		const dropdowns = document.querySelectorAll('nav ul li > a');
+		dropdowns.forEach(dropdown => {
+			dropdown.addEventListener('click', function(e) {
+				e.preventDefault();
+				const submenu = this.nextElementSibling;
+				submenu.classList.toggle('show');
+			});
+		});
+
+		window.onclick = function(event) {
+			if (!event.target.matches('nav ul li > a')) {
+				const submenus = document.querySelectorAll('.show');
+				submenus.forEach(submenu => {
+					submenu.classList.remove('show');
+				});
+			}
+		}
+	</script>
+</body>
+</html>
+
